@@ -20,4 +20,9 @@ describe('An account ', () => {
     expect(account.showBalance()).toEqual(50);
 });
 
+it('shows an error when trying to withdraw more funds ', () => {
+  account.deposit(100);
+  expect( function () { account.withdraw(150)} ).toThrowError("Funds are not sufficient!")
+});
+
 });

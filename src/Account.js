@@ -12,6 +12,9 @@ Account.prototype.deposit = function(amount) {
 };
 
 Account.prototype.withdraw = function(amount) {
+  if (amount > this.balance) {
+    throw new Error("Funds are not sufficient!")
+  }
   return this.balance -= amount
 
 };
